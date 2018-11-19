@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculatrice</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="row">
+		<div class="col-md-4">
+			<!--Table-->
+			<input type="text" class="form-control" class="result" id="result" >
+			<table id="tablePreview" class="table table-bordered">
+			<!--Table head-->
+			  <tbody class="text-center">
+			    <tr>
+				    <td><button type="button" class="btn btn-light" id='1'>1</button></th>
+				    <td><button type="button" class="btn btn-light" id='2'>2</button></td>
+				    <td><button type="button" class="btn btn-light" id='3'>3</button></td>
+				    <td><button type="button" class="btn btn-light" id='+'>+</button></td>
+			    </tr>
+			    <tr>
+			        <td><button type="button" class="btn btn-light" id='4'>4</button></th>
+			        <td><button type="button" class="btn btn-light" id='5'>5</button></td>
+			        <td><button type="button" class="btn btn-light" id='6'>6</button></td>
+			        <td><button type="button" class="btn btn-light" id='-'>-</button></td>
+			    </tr>
+			    <tr>
+			        <td><button type="button" class="btn btn-light" id='7'>7</button></th>
+			        <td><button type="button" class="btn btn-light" id='8'>8</button></td>
+			        <td><button type="button" class="btn btn-light" id='9'>9</button></td>
+			        <td><button type="button" class="btn btn-light" id='*'>*</button></td>
+			    </tr>
+			    <tr>
+			    	<td><button type="button" class="btn btn-light" id='0'>0</button></th>
+			        <td colspan="2"><button type="button" class="btn btn-light" id='='>=</button></th>
+			        <td><button type="button" class="btn btn-light" id='/'>/</button></td>
+			    </tr>
+			  </tbody>
+			  <!--Table body-->
+			</table>
+		</div>
+	</div>
+<!--Table-->
+</body>
+</html>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script type="text/javascript">
+  	var inputX;
+  	var inputY;
+  	var result;
+  	var val;
+
+  	$("button").click(function(){
+  		var getId = $(this).attr("id");
+  		val = val+getId;
+  		$('#result').val(val);
+    });
+
+  	$(document).click(function() { $("#result").focus() });
+
+  	function addition(inputX, inputY){
+  		result = inputX + inputY;
+  		return result;
+  	}
+
+  	function soustraction(inputX, inputY){
+  		result = inputX - inputY;
+  		return result;
+  	}
+
+  	function multiplication(inputX, inputY){
+  		result = inputX * inputY;
+  		return result;
+  	}
+
+  	function division(inputX, inputY){
+  		result = inputX / inputY;
+  		return result;
+  	}
+  	
+
+
+
+	$('#result').keypress(function(e){
+        if(e.which == 13){ //enter
+            alert('Enter pressed: Submitting the form....');
+        }
+    });
+	
+
+
+ 
+
+
+  </script>
